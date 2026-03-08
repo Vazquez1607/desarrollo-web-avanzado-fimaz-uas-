@@ -7,3 +7,5 @@ La clase Alumno extiende Usuario, añade la matrícula y define el rol "Alumno".
 
 Evidencia: Se probó la creación de usuarios válidos e inválidos.
 El sistema muestra los datos correctos y controla los errores con mensajes claros.
+
+prueba:http://localhost/desarrollo-web-avanzado-fimaz-uas/parcial-1-poo/practica-3/index.php
