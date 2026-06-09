@@ -51,6 +51,7 @@
 
                     <form action="index.php?route=productos/delete" method="POST" class="d-inline">
                         <input type="hidden" name="id" value="<?= (int)$producto['id']; ?>">
+                        <input type="hidden" name="csrf" value="<?= $_SESSION['csrf'] ?>">
                         <button type="submit" class="btn btn-danger btn-sm px-3"
                             onclick="return confirm('¿Deseas eliminar este producto?');">
                             Eliminar

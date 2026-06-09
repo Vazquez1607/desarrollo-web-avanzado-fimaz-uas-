@@ -1,0 +1,24 @@
+---
+title: BitacoraModel
+description: Modelo que gestiona el registro de acciones del administrador
+---
+
+# BitacoraModel
+
+Modelo que registra y consulta todas las acciones realizadas por el administrador en el sistema.
+
+## Métodos
+
+### `__construct()`
+Inicializa la conexión a la base de datos mediante la clase `Database`.
+
+### `registrar(string $usuario, string $accion, string $detalle)`
+Guarda una nueva acción en la bitácora.
+- **Parámetro:** `$usuario` — nombre del administrador que realizó la acción
+- **Parámetro:** `$accion` — tipo de acción realizada (CREAR, EDITAR, ELIMINAR)
+- **Parámetro:** `$detalle` — descripción detallada de la acción
+- **Retorna:** true si se registró, false si hubo error
+
+### `obtenerTodos()`
+Retorna todos los registros de la bitácora ordenados del más reciente al más antiguo.
+- **Retorna:** array con todos los registros de acciones

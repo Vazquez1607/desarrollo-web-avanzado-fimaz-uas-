@@ -1,0 +1,46 @@
+---
+title: ProductoController
+description: Controlador principal de productos del sistema MVC
+---
+
+# ProductoController
+
+Controlador que gestiona todas las operaciones CRUD de productos, subida de imágenes, bitácora y API REST.
+
+## Métodos
+
+### `__construct()`
+Inicializa los modelos de producto y bitácora.
+
+### `verificarSesion()`
+Verifica que el administrador tenga sesión activa. Si no hay sesión, redirige al login.
+
+### `index()`
+Muestra el listado paginado de productos. Muestra 10 productos por página según el parámetro GET `pagina`.
+
+### `create()`
+Muestra el formulario para registrar un nuevo producto.
+
+### `store()`
+Procesa el formulario y guarda un nuevo producto. Valida:
+- Campos obligatorios
+- Valores numéricos
+- Que existencia y precios no sean negativos
+- Que precio de venta no sea menor al de compra
+- Que el SKU no esté duplicado
+- Sube la imagen a la carpeta `IMG/`
+
+### `edit()`
+Muestra el formulario para editar un producto existente buscándolo por ID.
+
+### `update()`
+Procesa el formulario y actualiza un producto existente. Aplica las mismas validaciones que `store()`.
+
+### `delete()`
+Elimina un producto por su ID y registra la acción en la bitácora.
+
+### `apiProductos()`
+Endpoint REST que devuelve todos los productos en formato JSON.
+
+### `bitacora()`
+Muestra el registro de acciones del administrador.

@@ -1,1 +1,64 @@
-PLACEHOLDER, GIT DOES NOT COMMIT EMPTY FOLDERS
+Sistema de Administración de Productos - Tienda MVC
+
+Descripción
+-----------
+Sistema web desarrollado en PHP utilizando el patrón de arquitectura MVC 
+(Modelo-Vista-Controlador). Permite la administración de productos mediante 
+operaciones CRUD, autenticación de usuarios, bitácora de actividades, 
+paginación, subida de imágenes y una API REST para consultar productos en JSON.
+
+Requisitos
+----------
+- XAMPP (PHP 8.0 o superior)
+- MySQL
+- Navegador web
+
+Instalación
+-----------
+1. Clona o descarga el proyecto en la carpeta htdocs de XAMPP:
+   C:/xampp/htdocs/proyecto-final
+
+2. Importa la base de datos:
+   - Abre phpMyAdmin en http://localhost/phpmyadmin
+   - Crea una base de datos llamada: productos
+   - Importa el archivo: tienda_mvc.sql
+
+3. Configura la conexión en config/Database.php:
+   - host: localhost
+   - dbname: productos
+   - user: root
+   - password: (la tuya, por defecto vacía en XAMPP)
+
+4. Accede al sistema en:
+   http://localhost/proyecto-final
+
+Credenciales de acceso
+----------------------
+Usuario: admin
+Contraseña: admin123
+
+Funcionalidades
+---------------
+- Login de administrador con protección CSRF
+- Alta, edición y eliminación de productos
+- Validación de precios y existencias
+- Paginación de productos (10 por página)
+- Subida de imágenes de productos
+- Bitácora de acciones del administrador
+- Catálogo público con búsqueda
+- API REST: http://localhost/proyecto-final/index.php?route=api/productos
+- Rutas amigables con .htaccess
+
+Estructura del proyecto
+-----------------------
+proyecto-final/
+├── config/
+│   ├── Database.php        Conexión a la base de datos
+│   ├── Autoload.php        Carga automática de clases
+│   └── views/              Vistas del sistema
+├── controllers/            Controladores (lógica)
+├── models/                 Modelos (base de datos)
+├── IMG/                    Imágenes subidas
+├── .htaccess               Rutas amigables
+├── index.php               Enrutador principal
+└── README                  Este archivo

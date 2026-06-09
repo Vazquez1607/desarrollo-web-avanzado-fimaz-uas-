@@ -11,6 +11,16 @@
         $_SESSION['csrf'] = bin2hex(random_bytes(32));
     }
 
+
+    // VERIFICAR EL TOKEN AL RECIBIR EL POST
+    if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+         if (!isset($_POST['csrf']) || $_POST['csrf'] !== $_SESSION['csrf']) {
+             http_response_code(403);
+             die('Token CSRF inválido.');
+         }
+    }
+
+
     use Controllers\AuthController;
     use Controllers\ProductoController;
     use Controllers\PublicController;
@@ -68,6 +78,10 @@
         case 'productos/bitacora':
         $productoController->bitacora();
         break;
+
+        case 'api/productos':
+          $productoController->apiProductos();
+          break;
 
         case 'catalogo':
         default:

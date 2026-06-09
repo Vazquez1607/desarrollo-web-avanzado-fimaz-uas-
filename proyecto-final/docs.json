@@ -1,0 +1,29 @@
+{
+  "name": "Tienda MVC",
+  "theme": "mint",
+  "colors": {
+    "primary": "#16a34a"
+  },
+  "anchors": [],
+  "navigation": {
+    "tabs": [
+      {
+        "tab": "Documentación",
+        "groups": [
+          {
+            "group": "Introducción",
+            "pages": ["index"]
+          },
+          {
+            "group": "Controladores",
+            "pages": ["docs/producto-controller", "docs/auth-controller", "docs/public-controller"]
+          },
+          {
+            "group": "Modelos",
+            "pages": ["docs/producto-model", "docs/bitacora-model"]
+          }
+        ]
+      }
+    ]
+  }
+}

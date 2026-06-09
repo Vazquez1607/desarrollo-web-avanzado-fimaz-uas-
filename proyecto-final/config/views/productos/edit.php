@@ -5,6 +5,8 @@
 
 <form action="index.php?route=productos/update" method="POST">
     <input type="hidden" name="id" value="<?=  (int)$producto['id']; ?>">
+     <!-- Campo oculto que manda el token CSRF junto con el formulario-->
+    <input type="hidden" name="csrf" value="<?= $_SESSION['csrf'] ?>">
 
     <div class="mb-3">
         <label class="form-label">SKU</label>

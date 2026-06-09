@@ -13,6 +13,8 @@
             <div class="card-body">
 
                 <form action="index.php?route=auth/login" method="POST">
+                    <!-- AGREGAR CAMPO OCULTO DEL TOKEN PERO AHORA EN EL FORMULARIO -->
+                    <input type="hidden" name="csrf" value="<?= $_SESSION['csrf'] ?>">
 
                     <div class="mb-3">
                         <label class="form-label">Usuario</label>

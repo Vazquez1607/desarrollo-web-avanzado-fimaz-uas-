@@ -6,6 +6,9 @@
 <h2>Registrar producto</h2>
 
 <form action="index.php?route=productos/store" method="POST" enctype="multipart/form-data">
+  <!-- mandar el token al servidor -->
+  <input type="hidden" name="csrf" value="<?= $_SESSION['csrf'] ?>">
+
 
     <div class="mb-3">
         <label class="form-label">SKU</label>

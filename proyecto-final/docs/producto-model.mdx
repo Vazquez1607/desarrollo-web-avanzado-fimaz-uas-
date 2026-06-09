@@ -1,0 +1,56 @@
+---
+title: ProductoModel
+description: Modelo que gestiona la base de datos de productos
+---
+
+# ProductoModel
+
+Modelo que proporciona todos los métodos para interactuar con la tabla `productos` en la base de datos.
+
+## Métodos
+
+### `__construct()`
+Inicializa la conexión a la base de datos mediante la clase `Database`.
+
+### `obtenerTodos()`
+Retorna un array con todos los productos ordenados por ID descendente.
+
+### `buscarPublico(string $termino)`
+Busca productos por nombre o descripción para el catálogo público.
+- **Parámetro:** `$termino` — texto a buscar
+- **Retorna:** array con los productos encontrados
+
+### `obtenerPorId(int $id)`
+Obtiene un producto específico por su ID.
+- **Parámetro:** `$id` — ID del producto
+- **Retorna:** array con el producto o null si no existe
+
+### `crear(array $data)`
+Inserta un nuevo producto en la base de datos usando una transacción.
+- **Parámetro:** `$data` — array con sku, nombre, descripcion, precio_compra, precio_venta, existencia, imagen
+- **Retorna:** true si se creó, false si hubo error
+
+### `actualizar(int $id, array $data)`
+Actualiza los datos de un producto existente.
+- **Parámetro:** `$id` — ID del producto
+- **Parámetro:** `$data` — array con los nuevos datos
+- **Retorna:** true si se actualizó, false si hubo error
+
+### `eliminar(int $id)`
+Elimina un producto por su ID usando una transacción.
+- **Parámetro:** `$id` — ID del producto
+- **Retorna:** true si se eliminó, false si no existe o hubo error
+
+### `skuExiste(string $sku, int $excludeId)`
+Verifica si un SKU ya está registrado en la base de datos.
+- **Parámetro:** `$sku` — SKU a verificar
+- **Parámetro:** `$excludeId` — ID a excluir (para edición)
+- **Retorna:** true si ya existe, false si está disponible
+
+### `contarTodos()`
+Retorna el total de productos registrados para la paginación.
+
+### `obtenerPorPagina(int $limite, int $offset)`
+Retorna un subconjunto de productos para la paginación.
+- **Parámetro:** `$limite` — cantidad de productos por página
+- **Parámetro:** `$offset` — desde qué registro empezar

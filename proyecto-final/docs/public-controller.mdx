@@ -1,0 +1,16 @@
+---
+title: PublicController
+description: Controlador del catálogo público de productos
+---
+
+# PublicController
+
+Controlador que gestiona la vista pública del catálogo de productos, accesible sin necesidad de iniciar sesión.
+
+## Métodos
+
+### `catalogo()`
+Muestra el catálogo público de productos.
+- Recibe el parámetro GET `buscar` para filtrar productos
+- Si no hay término de búsqueda, muestra todos los productos
+- Utiliza `ProductoModel::buscarPublico()` para obtener los resultados

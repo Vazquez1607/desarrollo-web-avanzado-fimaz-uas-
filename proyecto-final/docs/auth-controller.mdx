@@ -1,0 +1,22 @@
+---
+title: AuthController
+description: Controlador de autenticación de administradores
+---
+
+# AuthController
+
+Controlador que gestiona el inicio y cierre de sesión del administrador.
+
+## Métodos
+
+### `showLogin()`
+Muestra el formulario de inicio de sesión.
+
+### `login()`
+Procesa el formulario de login. Verifica las credenciales contra la base de datos.
+- Si son correctas, inicia la sesión y redirige al panel de productos
+- Si son incorrectas, muestra un mensaje de error
+- Incluye protección CSRF en el formulario
+
+### `logout()`
+Cierra la sesión del administrador y redirige al catálogo público.
